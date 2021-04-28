@@ -61,13 +61,13 @@ for output in outs:
             boxes.append([x, y, w, h])
             confidences.append(float(confidence))
             class_ids.append(class_id)
-            cv.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            # cv.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
 #Removing Double Boxes
 indexes = cv.dnn.NMSBoxes(boxes, confidences, 0.3, 0.4)
 
 for i in range(len(boxes)):
-    if i in indexes:
+    if i in indexes[0]:
         x, y, w, h = boxes[i]
         label = classes[class_ids[i]]  # name of the objects
        
