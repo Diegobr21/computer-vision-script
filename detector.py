@@ -74,7 +74,7 @@ for i in range(len(boxes)):
         cv.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
         cv.putText(img, label, (x, y), cv.FONT_HERSHEY_PLAIN, 1, (0, 0, 255), 2)
 
-title = str(len(boxes))
+title = f"Found <persons={indexes[0]}>"
 cv.imshow(title, img)
 cv.waitKey(0)
 cv.destroyAllWindows()
